@@ -18,5 +18,6 @@ script based: see `filter_wikiart_script_example.py`
 
 
 **a typical use case:**
-you want to filter the huge WikiArt database for a specific art style and only download these artworks. 
+
+you want to filter the WikiArt database for a specific art style and only download these artworks. 
 in this case you have to set the `field` parameter to  `field='style'`, and the `target_value` parameter to your wanted style (check out https://www.wikiart.org/en/paintings-by-style for options)
