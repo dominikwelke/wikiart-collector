@@ -40,6 +40,7 @@ def filter_wikiart(folder_in='wikiart-saved', folder_out='wikiart-filtered', fie
 	json_list = glob(os.path.join('meta', '*.json'))
 	json_list = [i for i in json_list if i != os.path.join(folder_in, 'meta', 'artists.json')]
 	json_list.sort()
+	os.chdir(olddir)
 
 
 	# loop through artists
@@ -49,7 +50,7 @@ def filter_wikiart(folder_in='wikiart-saved', folder_out='wikiart-filtered', fie
 	keep_artists = []
 	for i_artist in range(n_artists):
 		# load json
-		with open(json_list[i_artist]) as f:
+		with open(os.path.join(folder_in, json_list[i_artist])) as f:
 			d_artist = json.load(f)
 
 		# subselect the wanted pics
@@ -62,7 +63,7 @@ def filter_wikiart(folder_in='wikiart-saved', folder_out='wikiart-filtered', fie
 
 		# save subsetted json to disc
 		if pics != []:
-			with open(os.path.join('..',folder_out, json_list[i_artist]), 'w+') as f:
+			with open(os.path.join(folder_out, json_list[i_artist]), 'w+') as f:
 				json.dump(pics,f,indent=True)
 			# compile relevant metainfo
 			c_artists += 1
@@ -73,7 +74,6 @@ def filter_wikiart(folder_in='wikiart-saved', folder_out='wikiart-filtered', fie
 
 
 	# clean out and save updated artists.json (important for only downloading the wanted pictures)
-	os.chdir(olddir)
 	with open(os.path.join(folder_in, 'meta', 'artists.json')) as f:
 		artists_json = json.load(f)
 	
