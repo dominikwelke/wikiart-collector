@@ -7,7 +7,11 @@ it builds on the [wikiart](https://github.com/lucasdavid/wikiart) repository by 
 
 how to use it:
 - download all metainfo from wikiart using lucasdavid's code (takes forever) 
-python3 wikiart.py --datadir ./wikiart-saved/ fetch --only paintings
+
+`python3 wikiart.py --datadir ./wikiart-saved/ fetch --only paintings`
+
 - build custom subsets using my function
+
 - use lucasdavid's code again to download the wanted jpegs
-python3 wikiart.py --datadir wikiart-filtered/field/target-value/ fetch
+
+`python3 wikiart.py --datadir wikiart-filtered/field/target-value/ fetch`
