@@ -1,4 +1,4 @@
-from filter_wikiart.filter_wikiart import filter_wikiart
+from wikiart_filter.wikiart_filter import wikiart_filter
 import argparse
 
 
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 	args = vars(parser.parse_args())
 	#print(args)
 
-	filter_wikiart(
+	wikiart_filter(
 		folder_in=args['folder_in'], folder_out=args['folder_out'],
 		field=args['field'],target_value=args['target_value']
 		)

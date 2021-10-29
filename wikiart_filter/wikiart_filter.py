@@ -2,7 +2,7 @@ import json
 from glob import glob
 import os
 
-def filter_wikiart(folder_in='wikiart-saved', folder_out='wikiart-filtered', field='genre', target_value='abstract'):
+def wikiart_filter(folder_in='wikiart-saved', folder_out='wikiart-filtered', field='genre', target_value='abstract'):
 	"""
 	this function does the trick of filtering all wikiart entries (artists and their paintings) for a wanted category (e.g. 'genre' or 'style') in the wikiarts annnotations.
 

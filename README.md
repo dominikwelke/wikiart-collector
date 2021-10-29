@@ -10,16 +10,18 @@ please be sure to check and agree with [WikiArt's terms of use](https://www.wiki
 
 
 **how to use it:**
-1. download all metainfo from wikiart using lucasdavid's code (not included in this repository; this arguably takes forever)  
-commandline: `python3 wikiart.py --datadir X fetch --only paintings`
+1. download all metainfo from wikiart using lucasdavid's code (not included in this repository)  
+commandline: `python3 wikiart.py --datadir X fetch --only paintings`  
+(*note:* this arguably takes forever)
 
 2. build your custom subsets using my function  
-commandline: `python filter_wikiart_cmd.py --folder-in X --folder-out Y --field foo --target-value bar`  
-script based: see `filter_wikiart_script_example.py`
+commandline: `python wikiart_collector_cmd.py --folder-in X --folder-out Y --field foo --target-value bar`  
+script based: see `wikiart_collector_script_example.py`  
+(*note:* it's recommended not to overwrite the database in `--folder-in`, but to save the subsets separately)
 
 3. use lucasdavid's code again to download the wanted jpegs  
 commandline: `python3 wikiart.py --datadir wikiart-filtered/field/target-value/ fetch`  
-(*attention!* be sure to doublecheck your paths. lucasdavid's code will simply download all of WikiArt if you call the above line pointing to an empty or nonexisting `--datadir`)
+(*note:* be sure to doublecheck your paths. lucasdavid's code will simply download all of WikiArt if you call the above line pointing to an empty or nonexisting `--datadir`)
 
 
 **a typical use case:**
